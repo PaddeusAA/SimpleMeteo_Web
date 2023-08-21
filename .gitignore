@@ -9,3 +9,4 @@ log/
 target/
 Thumbs.db
 .idea\workspase.xml
+application.properties
