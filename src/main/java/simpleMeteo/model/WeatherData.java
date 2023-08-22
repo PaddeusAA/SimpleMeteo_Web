@@ -9,7 +9,7 @@ public class WeatherData {
     private String cityName;
 
     // Температура в городе
-    private double temperature;
+    private String temperature;
 
     // Влажность в городе
     private double humidity;
@@ -37,11 +37,11 @@ public class WeatherData {
         this.cityName = cityName;
     }
 
-    public double getTemperature() {
+    public String getTemperature() {
         return temperature;
     }
 
-    public void setTemperature(double temperature) {
+    public void setTemperature(String temperature) {
         this.temperature = temperature;
     }
 

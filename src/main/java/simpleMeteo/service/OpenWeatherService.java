@@ -39,18 +39,17 @@ public class OpenWeatherService {
 
         JSONObject main = jsonObject.getJSONObject("main");
         JSONObject wind = jsonObject.getJSONObject("wind");
+        JSONArray weatherArray = jsonObject.getJSONArray("weather");
 
         // Получение имя города
         weatherData.setCityName(jsonObject.getString("name"));
         // Получение температуры города
-        weatherData.setTemperature(main.getDouble("temp"));
+        weatherData.setTemperature(String.format("%.1f", main.getDouble("temp" ))+ "°C");
         // Получение скорости ветра
         weatherData.setHumidity(main.getDouble("humidity"));
         // Получение скорости ветера
         weatherData.setWindSpeed(wind.getDouble("speed"));
-
         // Получение описание погоды
-        JSONArray weatherArray = jsonObject.getJSONArray("weather");
         if (weatherArray.length() > 0) {
             JSONObject weatherObj = weatherArray.getJSONObject(0);
             weatherData.setWeatherDescription(weatherObj.getString("main"));

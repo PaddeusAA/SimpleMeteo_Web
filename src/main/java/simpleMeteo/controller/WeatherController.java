@@ -20,12 +20,12 @@ public class WeatherController {
         this.openWeatherService = openWeatherService;
     }
 
-    @RequestMapping("/")
+    @RequestMapping("/simplemeteo")
     public String showWeatherForm() {
         return "homepage";
     }
 
-    @PostMapping("/get-weather")
+    @PostMapping("/simplemeteo")
     public String getWeather(@RequestParam String city, Model model){
         WeatherData weatherData = openWeatherService.getWeatherData(city);
         model.addAttribute("weatherData", weatherData);
